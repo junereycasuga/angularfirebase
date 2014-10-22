@@ -20,7 +20,7 @@ angular
   ])
   .value('fbURL', 'https://angularifictest.firebaseio.com/')
   .factory('Person', function (fbURL, $firebase) {
-    return $firebase(new Firebase(fbURL));
+    return $firebase(new Firebase(fbURL)).$asArray();
   })
   .config(function ($routeProvider) {
     $routeProvider

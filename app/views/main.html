@@ -1,11 +1,11 @@
 <form ng-submit="add()">
   <div class="form-group">
     <label>First Name:</label>
-    <input type="text" ng-model="firstName" class="form-control" />
+    <input type="text" ng-model="firstName" class="form-control">
   </div>
   <div class="form-group">
     <label>Last Name:</label>
-    <input type="text" ng-model="lastName" class="form-control" />
+    <input type="text" ng-model="lastName" class="form-control">
   </div>
   <div class="form-group">
     <input type="submit" value="Save" class="btn btn-primary">
@@ -14,22 +14,20 @@
 
 <table class="table">
   <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
-    </tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </thead>
   <tbody>
-    <tr ng-repeat="name in list | orderByPriority">
-      <td>{{ name.firstName }}</td>
-      <td>{{ name.lastName }}</td>
+    <tr ng-repeat="(id, name) in person">
+      <td> {{ name.firstName  }} </td>
+      <td> {{ name.lastName }} </td>
       <td>
         <a href="#/edit/{{ name.$id }}">Edit</a>
       </td>
       <td>
-        <a href="#" ng-click="remove(name.$id)">Remove</a>
+        <a href="#" ng-click="remove(id)">Remove</a>
       </td>
     </tr>
   </tbody>
